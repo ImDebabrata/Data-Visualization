@@ -24,13 +24,12 @@ export interface ScatterPlotProps {
 }
 
 function App() {
-  console.log(data);
   return (
     <div className="App">
-      <div className="scatter">
+      <div className="graph">
         <Scatter data={data} />
       </div>
-      <div className="bar">
+      <div className="graph">
         <Bar data={data} />
       </div>
     </div>

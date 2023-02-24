@@ -3,12 +3,6 @@ import { ScatterPlotProps } from "../App";
 
 const Scatter = ({ data }: ScatterPlotProps) => {
   const option = {
-    dataset: [
-      {
-        source: data.map((d) => [d["Color intensity"], d.Hue]),
-      },
-    ],
-
     title: {
       text: "Linear Regression",
       left: "center",
@@ -24,6 +18,7 @@ const Scatter = ({ data }: ScatterPlotProps) => {
     },
     xAxis: {
       name: "Color Intensity",
+      data: data.map((e) => e["Color intensity"]),
       splitLine: {
         lineStyle: {
           type: "dashed",
@@ -40,6 +35,7 @@ const Scatter = ({ data }: ScatterPlotProps) => {
     },
     series: [
       {
+        data: data.map((e) => e.Hue),
         name: "Hue",
         type: "scatter",
       },

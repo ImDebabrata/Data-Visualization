@@ -28,7 +28,7 @@ const Bar = ({ data }: ScatterPlotProps) => {
         type: "category",
         // prettier-ignore
         name:"Alcohol",
-        data: data.map((d) => d.Alcohol),
+        data: data.map((s) => s.Alcohol),
       },
     ],
     yAxis: [
@@ -41,7 +41,7 @@ const Bar = ({ data }: ScatterPlotProps) => {
       {
         name: "Malic Acid",
         type: "bar",
-        data: data.map((d) => d["Malic Acid"]),
+        data: data.map((s) => s["Malic Acid"]),
         markPoint: {
           data: [
             { type: "max", name: "Max" },
