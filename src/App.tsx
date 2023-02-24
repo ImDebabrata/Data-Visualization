@@ -1,10 +1,9 @@
 import "./App.css";
 import Scatter from "./components/Scatter";
 import data from "./dataSet.json";
-import { ScatterPlotProps } from "./components/Scatter";
 import Bar from "./components/Bar";
 
-export interface DataPoint {
+interface DataPoint {
   Alcohol: number;
   "Malic Acid": number;
   Ash: number | string;
@@ -18,6 +17,10 @@ export interface DataPoint {
   Hue: number;
   "OD280/OD315 of diluted wines": number | string;
   Unknown: number;
+}
+
+export interface ScatterPlotProps {
+  data: DataPoint[];
 }
 
 function App() {

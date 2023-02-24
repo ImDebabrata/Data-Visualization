@@ -1,13 +1,5 @@
 import ReactEcharts from "echarts-for-react";
-import * as echarts from "echarts";
-// import * as d from 'echarts-stat';
-// import ecStat from "echarts-stat";
-import { DataPoint } from "../App";
-
-export interface ScatterPlotProps {
-  data: DataPoint[];
-}
-// echarts.registerTransform(ecStat.transform.regression);
+import { ScatterPlotProps } from "../App";
 
 const Scatter = ({ data }: ScatterPlotProps) => {
   const option = {
@@ -15,20 +7,10 @@ const Scatter = ({ data }: ScatterPlotProps) => {
       {
         source: data.map((d) => [d["Color intensity"], d.Hue]),
       },
-      // {
-      //   transform: {
-      //     type: "ecStat:regression",
-      //     // type: "linear",
-      //     // 'linear' by default.
-      //     // config: { method: 'linear', formulaOn: 'end'}
-      //   },
-      // },
     ],
 
     title: {
       text: "Linear Regression",
-      subtext: "By ecStat.regression",
-      sublink: "https://github.com/ecomfe/echarts-stat",
       left: "center",
     },
     legend: {
@@ -41,6 +23,7 @@ const Scatter = ({ data }: ScatterPlotProps) => {
       },
     },
     xAxis: {
+      name: "Color Intensity",
       splitLine: {
         lineStyle: {
           type: "dashed",
@@ -48,6 +31,7 @@ const Scatter = ({ data }: ScatterPlotProps) => {
       },
     },
     yAxis: {
+      name: "Hue",
       splitLine: {
         lineStyle: {
           type: "dashed",
@@ -56,18 +40,8 @@ const Scatter = ({ data }: ScatterPlotProps) => {
     },
     series: [
       {
-        name: "scatter",
+        name: "Hue",
         type: "scatter",
-      },
-      {
-        name: "line",
-        type: "line",
-        datasetIndex: 1,
-        symbolSize: 0.1,
-        symbol: "circle",
-        label: { show: true, fontSize: 16 },
-        labelLayout: { dx: -20 },
-        encode: { label: 2, tooltip: 1 },
       },
     ],
   };

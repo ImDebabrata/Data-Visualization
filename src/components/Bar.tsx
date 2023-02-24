@@ -1,14 +1,11 @@
-import React from "react";
-import { DataPoint } from "../App";
-import { ScatterPlotProps } from "./Scatter";
+import { ScatterPlotProps } from "../App";
 import ReactECharts from "echarts-for-react";
-import * as echarts from "echarts";
 
 const Bar = ({ data }: ScatterPlotProps) => {
   const option = {
     title: {
       text: "Bar chart",
-      // left: "center",
+      left: "left",
     },
     tooltip: {
       trigger: "axis",
@@ -30,11 +27,13 @@ const Bar = ({ data }: ScatterPlotProps) => {
       {
         type: "category",
         // prettier-ignore
-        data: data.map((d)=>d.Alcohol),
+        name:"Alcohol",
+        data: data.map((d) => d.Alcohol),
       },
     ],
     yAxis: [
       {
+        name: "Malic Acid",
         type: "value",
       },
     ],
