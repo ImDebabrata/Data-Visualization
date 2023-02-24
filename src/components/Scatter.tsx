@@ -4,7 +4,7 @@ import { ScatterPlotProps } from "../App";
 const Scatter = ({ data }: ScatterPlotProps) => {
   const option = {
     title: {
-      text: "Linear Regression",
+      text: "Scatter",
       left: "center",
     },
     legend: {
